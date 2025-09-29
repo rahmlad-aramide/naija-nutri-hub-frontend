@@ -48,5 +48,5 @@ jobs:
           git pull
           git add .
           git commit -m "Updated leaderboard"
-          git remote set-url origin https://$API_TOKEN@github.com/mlsanigeria/naija-nutri-hub.git
+          git remote set-url origin https://$API_TOKEN@github.com/mlsanigeria/naija-nutri-hub-frontend.git
           git push
