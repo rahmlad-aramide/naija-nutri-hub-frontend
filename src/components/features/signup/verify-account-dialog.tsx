@@ -30,9 +30,9 @@ export const VerifyAccountDialog = ({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Enter verification code</DialogTitle>
+          <DialogTitle>We sent you a mail</DialogTitle>
           <DialogDescription>
-            Enter the <abbr title="One Time Password">OTP</abbr> we sent to {maskEmail(email)}
+            Enter the security code we sent to {maskEmail(email)}
           </DialogDescription>
         </DialogHeader>
 

@@ -8,18 +8,10 @@ export default function ResetPasswordPage() {
   return (
     <main>
       <section>
-        <div>
-          <header>
-            <h2>Reset Your Password</h2>
-            <p>
-              Enter your email address and {"we'll"} send you a link to reset
-              your password.
-            </p>
-          </header>
-          <Suspense fallback={<p>Loading...</p>}>
-            <ResetPasswordForm />
-          </Suspense>
-        </div>
+        <h2>Set a new password</h2>
+        <Suspense fallback={<p>Loading...</p>}>
+          <ResetPasswordForm />
+        </Suspense>
       </section>
     </main>
   );

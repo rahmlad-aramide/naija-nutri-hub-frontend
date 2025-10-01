@@ -56,14 +56,13 @@ export const ResetPasswordForm = () => {
       <form
         method="POST"
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8"
       >
         <FormField
           control={form.control}
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel htmlFor="password">New Password</FormLabel>
+              <FormLabel htmlFor="password">Password</FormLabel>
               <FormControl>
                 <div className="relative">
                   <Input

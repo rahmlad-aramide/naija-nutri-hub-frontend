@@ -20,7 +20,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 
-import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
+import { REGEXP_ONLY_DIGITS } from "input-otp";
 
 import { VerifyAccountFormSchema } from "@/lib/zod";
 import { ResendOTPButton } from "@/components/features/signup/resend-otp-button";
@@ -52,7 +52,7 @@ export const VerifyAccountForm = ({ setOpen }: VerifyAccountFormProps) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name="code"
@@ -63,7 +63,7 @@ export const VerifyAccountForm = ({ setOpen }: VerifyAccountFormProps) => {
                 <InputOTP
                   autoFocus
                   maxLength={6}
-                  pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
+                  pattern={REGEXP_ONLY_DIGITS}
                   onComplete={form.handleSubmit(onSubmit)}
                   {...field}
                 >
