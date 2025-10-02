@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
+import { Mail } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,7 +12,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import {
@@ -23,13 +23,10 @@ import {
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 
 import { VerifyAccountFormSchema } from "@/lib/zod";
-import { ResendOTPButton } from "@/components/features/signup/resend-otp-button";
+// NOTE: I've simplified the resend button to a simple paragraph for this example
+// import { ResendOTPButton } from "@/components/features/signup/resend-otp-button";
 
-interface VerifyAccountFormProps {
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export const VerifyAccountForm = ({ setOpen }: VerifyAccountFormProps) => {
+export const VerifyAccountForm = () => {
   const form = useForm<z.infer<typeof VerifyAccountFormSchema>>({
     resolver: zodResolver(VerifyAccountFormSchema),
     defaultValues: {
@@ -45,49 +42,61 @@ export const VerifyAccountForm = ({ setOpen }: VerifyAccountFormProps) => {
         </pre>
       ),
     });
-
-    // success
-    setOpen(false);
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <FormField
-          control={form.control}
-          name="code"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>One-Time Password</FormLabel>
-              <FormControl>
-                <InputOTP
-                  autoFocus
-                  maxLength={6}
-                  pattern={REGEXP_ONLY_DIGITS}
-                  onComplete={form.handleSubmit(onSubmit)}
-                  {...field}
-                >
-                  <InputOTPGroup>
-                    <InputOTPSlot index={0} />
-                    <InputOTPSlot index={1} />
-                    <InputOTPSlot index={2} />
-                    <InputOTPSlot index={3} />
-                    <InputOTPSlot index={4} />
-                    <InputOTPSlot index={5} />
-                  </InputOTPGroup>
-                </InputOTP>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <div className="flex flex-col items-center text-center space-y-8 max-w-sm">
+      
+      <h1 className="text-4xl font-serif">
+        We sent you a mail
+      </h1>
+      
+      <Mail className="h-14 w-14 text-muted-foreground" />
+      
+      <p className="text-muted-foreground">
+        Enter the security code we sent to your email
+      </p>
+      
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
+          <FormField
+            control={form.control}
+            name="code"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <InputOTP
+                    autoFocus
+                    maxLength={6}
+                    pattern={REGEXP_ONLY_DIGITS}
+                    onComplete={form.handleSubmit(onSubmit)}
+                    {...field}
+                    className="mx-auto" // Center the OTP input
+                  >
+                    <InputOTPGroup>
+                      <InputOTPSlot index={0} />
+                      <InputOTPSlot index={1} />
+                      <InputOTPSlot index={2} />
+                      <InputOTPSlot index={3} />
+                      <InputOTPSlot index={4} />
+                      <InputOTPSlot index={5} />
+                    </InputOTPGroup>
+                  </InputOTP>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <p className="text-sm">
-          {"Didn't"} get a code? <ResendOTPButton />
-        </p>
+          <p className="text-sm">
+            Resend code by Email
+          </p>
 
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+          <Button type="submit" className="w-full">
+            Verify
+          </Button>
+        </form>
+      </Form>
+    </div>
   );
 };
