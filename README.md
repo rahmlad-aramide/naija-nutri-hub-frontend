@@ -21,7 +21,7 @@ Naija Nutri Hub allows a user to take or upload a photo of a meal and receive:
 
 2. **Fork the Repository**: Start by forking the repository to your GitHub account.
 
-3. **Contribute to the Naija Nutri Hub Project**: This repository is dedicated to developing the Frontend Engineering side of the Naija Nutri Hub Project. Check out the current [Figma UI/UX design]() and make your contributions by fixing bugs, adding new features, improving documentation, or addressing issues. Check out our [Contribution Guidelines](CONTRIBUTING.md).
+3. **Contribute to the Naija Nutri Hub Project**: This repository is dedicated to developing the Frontend Engineering side of the Naija Nutri Hub Project. Check out the current [Figma UI/UX design](https://www.figma.com/design/JD4yFts6kF1mLQzictb2F4/hactober-fest?node-id=0-1) and make your contributions by fixing bugs, adding new features, improving documentation, or addressing issues. Check out our [Contribution Guidelines](CONTRIBUTING.md).
 
 4. **Submit a Pull Request**: Share your contributions by submitting pull requests. Please follow our contribution guidelines outlined in the project's README.
 
