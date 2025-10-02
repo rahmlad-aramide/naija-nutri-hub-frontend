@@ -10,7 +10,7 @@ This document outlines the guidelines for contributing to **NAIJA-NUTRI-HUB-FRON
 
 This project and its community are governed by the **NAIJA-NUTRI-HUB-FRONTEND Code of Conduct** (or a standard like the Contributor Covenant). By participating, you are expected to uphold this code. Please report unacceptable behavior to us.
 
-  * **[CODE\_OF\_CONDUCT](CODE\_OF\_CONDUCT)**
+  * **[CODE\_OF\_CONDUCT](CODE\_OF\_CONDUCT.md)**
 
 -----
 
