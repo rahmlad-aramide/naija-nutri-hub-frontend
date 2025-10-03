@@ -40,10 +40,8 @@ export const SignupForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof SignupFormSchema>) {
-    console.log(values);
-
-    // success
-    router.push('/verify-account');
+      console.log(values);
+      router.push(`/verify-account?email=${values.email}`);
   }
 
   return (
