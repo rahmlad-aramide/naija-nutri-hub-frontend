@@ -1,6 +1,6 @@
 # **Hacktoberfest Open Source Challenge 3.0**
 
-Welcome to the Hacktoberfest Open Source Challenge 3.0 organized by the Microsoft Learn Student Ambassadors Community in collaboration with the GitHub Campus Experts, Unilag Community! We're thrilled to have you on board for this exciting journey of collaboration and open-source contributions.
+Welcome to the Hacktoberfest Open Source Challenge 3.0 organized by the Microsoft Learn Student Ambassadors Community in collaboration with the [GitHub Campus Experts, Unilag Community](https://chat.whatsapp.com/IgY7V6RXFcwFkhLlnvOGKq)! We're thrilled to have you on board for this exciting journey of collaboration and open-source contributions.
 
 ## **About the Challenge**
 
@@ -39,7 +39,8 @@ Thank you to all our fantastic contributors for their hard work and dedication! 
 
 | S/N | Rank || Contributor | Merged PRs |
 |--| ---- | -- |----------- | ---------- |
-| 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/67334984?v=4' alt='Avatar' width='30' height='30'> | [rahmlad-aramide](https://github.com/rahmlad-aramide) | 1 |
+| 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/193773700?v=4' alt='Avatar' width='30' height='30'> | [aryadharmadhikari](https://github.com/aryadharmadhikari) | 1 |
+| 2 | 🥇 | <img src='https://avatars.githubusercontent.com/u/67334984?v=4' alt='Avatar' width='30' height='30'> | [rahmlad-aramide](https://github.com/rahmlad-aramide) | 1 |
 
 Thank you to all our fantastic contributors for their hard work and dedication!
 

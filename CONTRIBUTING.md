@@ -10,7 +10,7 @@ This document outlines the guidelines for contributing to **NAIJA-NUTRI-HUB-FRON
 
 This project and its community are governed by the **NAIJA-NUTRI-HUB-FRONTEND Code of Conduct** (or a standard like the Contributor Covenant). By participating, you are expected to uphold this code. Please report unacceptable behavior to us.
 
-  * **[CODE\_OF\_CONDUCT](CODE\_OF\_CONDUCT)**
+  * **[CODE\_OF\_CONDUCT](CODE\_OF\_CONDUCT.md)**
 
 -----
 
@@ -19,7 +19,7 @@ This project and its community are governed by the **NAIJA-NUTRI-HUB-FRONTEND Co
 If you have a question about how to use **NAIJA-NUTRI-HUB-FRONTEND** or want to discuss a potential feature, please use the following methods before opening an issue:
 
 1.  **Start a discussion on our GitHub Discussions page**
-2.  **Ask in any of the [WHATSAPP_COMMUNITIES](WHATSAPP_COMMUNITIES)**
+2.  **Ask in any of the [WHATSAPP_COMMUNITIES](WHATSAPP_COMMUNITIES.md)**
 
 -----
 
