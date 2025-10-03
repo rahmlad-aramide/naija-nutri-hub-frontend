@@ -63,7 +63,7 @@ def get_sorted_pr():
     merged_prs_count_by_user = defaultdict(int)
     avi = {}
     # Create a list of contributors to exempt
-    exempt = ["Sammybams", "ayobami11"]
+    exempt = ["Sammybams", "ayobami11", "rahmlad-aramide"]
 
     # Iterate through the pull_requests list
     for pr in response:
