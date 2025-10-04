@@ -41,8 +41,21 @@ export const NewPasswordForm = () => {
         setIsLoading(true);
         setError(null);
         try {
+            // --- API DOCUMENTATION STARTS HERE ---
+            // This is a placeholder for the real API call. A backend developer will replace this.
+            // const response = await api.resetPassword({ token, newPassword: values.newPassword });
+
+            // Expected API Contract:
+            // Endpoint: POST /api/auth/reset-password
+            // Request Body: { token: string, newPassword: string }
+            // Success Response (200 OK): { message: "Password updated successfully" }
+            // Error Response (400 Bad Request): { error: "Invalid or expired token" }
+            // --- API DOCUMENTATION ENDS HERE ---
+
+            // We simulate the API call so the loading spinner works
             await new Promise(resolve => setTimeout(resolve, 1500));
-            // 3. On success, set the success state to true
+
+            // On success, set the success state to true
             setIsSuccess(true);
         } catch (apiError) {
             setError("Your password reset link may be invalid or expired.");
