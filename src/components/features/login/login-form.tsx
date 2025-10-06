@@ -48,20 +48,33 @@ export const LoginForm = () => {
   return (
     <div className="w-full">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form
+          method="POST"
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-6"
+        >
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-white text-sm leading-none" style={{ fontFamily: 'var(--font-manrope)' }}>Email</FormLabel>
+                <FormLabel
+                  className="text-white text-sm leading-none"
+                  style={{ fontFamily: "var(--font-manrope)" }}
+                >
+                  Email
+                </FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <img src="/icons/mail-01.png" alt="mail" className="absolute left-3 top-1/2 -translate-y-1/2 size-5" />
-                    <Input 
-                      placeholder="Enter email" 
-                      className="bg-[#222222] border border-[#444444] rounded-md pl-10 h-12 text-white" 
-                      {...field} 
+                    <img
+                      src="/icons/mail-01.png"
+                      alt="mail"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 size-5"
+                    />
+                    <Input
+                      placeholder="Enter email"
+                      className="bg-[#222222] border border-[#444444] rounded-md pl-10 h-12 text-white"
+                      {...field}
                     />
                   </div>
                 </FormControl>
@@ -75,7 +88,13 @@ export const LoginForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel htmlFor="password" className="text-white text-sm leading-none" style={{ fontFamily: 'var(--font-manrope)' }}>Password</FormLabel>
+                <FormLabel
+                  htmlFor="password"
+                  className="text-white text-sm leading-none"
+                  style={{ fontFamily: "var(--font-manrope)" }}
+                >
+                  Password
+                </FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Input
@@ -87,7 +106,11 @@ export const LoginForm = () => {
                       className="bg-[#222222] border border-[#444444] rounded-md pl-10 pr-10 h-12 text-white"
                       {...field}
                     />
-                    <img src="/icons/square-lock-password.png" alt="lock" className="absolute left-3 top-1/2 -translate-y-1/2 size-5" />
+                    <img
+                      src="/icons/square-lock-password.png"
+                      alt="lock"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 size-5"
+                    />
                     <Button
                       type="button"
                       id="toggle-password"
@@ -115,27 +138,53 @@ export const LoginForm = () => {
 
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div 
-                className={`w-5 h-5 border rounded cursor-pointer flex items-center justify-center ${rememberMe ? 'bg-[#FF7A50] border-[#FF7A50]' : 'border-[#444444]'}`}
+              <div
+                className={`w-5 h-5 border rounded cursor-pointer flex items-center justify-center ${
+                  rememberMe
+                    ? "bg-[#FF7A50] border-[#FF7A50]"
+                    : "border-[#444444]"
+                }`}
                 onClick={toggleRememberMe}
               >
                 {rememberMe && (
-                  <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 1L3.5 6.5L1 4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="10"
+                    height="8"
+                    viewBox="0 0 10 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 1L3.5 6.5L1 4"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 )}
               </div>
-              <label className="text-white text-sm cursor-pointer leading-none" style={{ fontFamily: 'var(--font-manrope)' }} onClick={toggleRememberMe}>Keep me logged in</label>
+              <label
+                className="text-white text-sm cursor-pointer leading-none"
+                style={{ fontFamily: "var(--font-manrope)" }}
+                onClick={toggleRememberMe}
+              >
+                Keep me logged in
+              </label>
             </div>
-            <Link href="/reset-password" className="text-sm text-white hover:text-[#FF7A50] leading-none" style={{ fontFamily: 'var(--font-manrope)' }}>
+            <Link
+              href="/reset-password"
+              className="text-sm text-white hover:text-[#FF7A50] leading-none"
+              style={{ fontFamily: "var(--font-manrope)" }}
+            >
               Forgot password?
             </Link>
           </div>
 
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             className="w-full bg-[#FF7A50] hover:bg-[#FF7A50]/90 text-white py-3 rounded-md h-12 font-semibold text-sm leading-none"
-            style={{ fontFamily: 'var(--font-source-serif-pro)' }}
+            style={{ fontFamily: "var(--font-source-serif-pro)" }}
           >
             Log In
           </Button>

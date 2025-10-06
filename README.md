@@ -1,12 +1,12 @@
 # **Hacktoberfest Open Source Challenge 3.0**
 
-Welcome to the Hacktoberfest Open Source Challenge 3.0 organized by the Microsoft Learn Student Ambassadors Community in collaboration with the GitHub Campus Experts, Unilag Community! We're thrilled to have you on board for this exciting journey of collaboration and open-source contributions.
+Welcome to the Hacktoberfest Open Source Challenge 3.0 organized by the Microsoft Learn Student Ambassadors Community in collaboration with the [GitHub Campus Experts, Unilag Community](https://chat.whatsapp.com/IgY7V6RXFcwFkhLlnvOGKq)! We're thrilled to have you on board for this exciting journey of collaboration and open-source contributions.
 
 ## **About the Challenge**
 
 This year the Hacktoberfest ML/AI Open-Source Challenge focuses on **one flagship project — Naija Nutri Hub**.
 
-**Naija Nutri Hub** is an end-to-end, AI-powered food platform focused on **Nigerian food**. The goal is a practical, production-ready tool that combines computer vision, nutrition knowledge, recipe generation, and local discovery into a single experience. Participants can contribute across [ML/AI engineering](https://github.com/mlsanigeria/naija-nutri-hub), [frontend](https://github.com/mlsanigeria/naija-nutri-hub-frontend), [backend](https://github.com/mlsanigeria/naija-nutri-hub), [UI/UX design](https://github.com/mlsanigeria/naija-nutri-hub-frontend), DevOps, and non-technical roles (docs, community, testing).
+**Naija Nutri Hub** is an end-to-end, AI-powered food platform focused on **Nigerian food**. The goal is a practical, production-ready tool that combines computer vision, nutrition knowledge, recipe generation, and local discovery into a single experience. Participants can contribute across [ML/AI engineering](https://github.com/mlsanigeria/naija-nutri-hub), [frontend (with Next.js)](https://github.com/mlsanigeria/naija-nutri-hub-frontend), [backend](https://github.com/mlsanigeria/naija-nutri-hub), [UI/UX design](https://github.com/mlsanigeria/naija-nutri-hub-frontend), DevOps, and non-technical roles (docs, community, testing).
 
 ### Project overview
 Naija Nutri Hub allows a user to take or upload a photo of a meal and receive:
@@ -26,7 +26,7 @@ Naija Nutri Hub allows a user to take or upload a photo of a meal and receive:
 4. **Submit a Pull Request**: Share your contributions by submitting pull requests. Please follow our contribution guidelines outlined in the project's README.
 
 ### **Still Confused About How to Get Started? 🤔**
-Register for our info session on how to participate in this challenge online on [Microsoft Teams](https://bit.ly/mlsa-hacktoberfest2025).
+Watch the recording of our info session on how to participate in this challenge on [YouTube](https://youtu.be/pC_5E3AcrZc).
 
 ## **🏆 Leaderboard**
 
@@ -39,7 +39,8 @@ Thank you to all our fantastic contributors for their hard work and dedication! 
 
 | S/N | Rank || Contributor | Merged PRs |
 |--| ---- | -- |----------- | ---------- |
-| 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/67334984?v=4' alt='Avatar' width='30' height='30'> | [rahmlad-aramide](https://github.com/rahmlad-aramide) | 1 |
+| 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/193773700?v=4' alt='Avatar' width='30' height='30'> | [aryadharmadhikari](https://github.com/aryadharmadhikari) | 2 |
+| 2 | 🥈 | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi) | 1 |
 
 Thank you to all our fantastic contributors for their hard work and dedication!
 
