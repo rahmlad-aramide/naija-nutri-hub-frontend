@@ -17,13 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { ForgotPasswordFormSchema } from "@/lib/zod";
 
-interface ForgotPasswordFormProps {
-  closeDialog: () => void;
-}
-
-export const ForgotPasswordForm = ({
-  closeDialog,
-}: ForgotPasswordFormProps) => {
+export const ForgotPasswordForm = () => {
   const form = useForm<z.infer<typeof ForgotPasswordFormSchema>>({
     resolver: zodResolver(ForgotPasswordFormSchema),
     defaultValues: {

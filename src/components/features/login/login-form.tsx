@@ -173,7 +173,7 @@ export const LoginForm = () => {
               </label>
             </div>
             <Link
-              href="/reset-password"
+              href="/forgot-password"
               className="text-sm text-white hover:text-[#FF7A50] leading-none"
               style={{ fontFamily: "var(--font-manrope)" }}
             >
