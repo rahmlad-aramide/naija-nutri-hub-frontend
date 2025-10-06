@@ -26,7 +26,7 @@ Naija Nutri Hub allows a user to take or upload a photo of a meal and receive:
 4. **Submit a Pull Request**: Share your contributions by submitting pull requests. Please follow our contribution guidelines outlined in the project's README.
 
 ### **Still Confused About How to Get Started? 🤔**
-Register for our info session on how to participate in this challenge online on [Microsoft Teams](https://bit.ly/mlsa-hacktoberfest2025).
+Watch the recording of our info session on how to participate in this challenge on [YouTube](https://youtu.be/pC_5E3AcrZc).
 
 ## **🏆 Leaderboard**
 
@@ -40,7 +40,7 @@ Thank you to all our fantastic contributors for their hard work and dedication! 
 | S/N | Rank || Contributor | Merged PRs |
 |--| ---- | -- |----------- | ---------- |
 | 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/193773700?v=4' alt='Avatar' width='30' height='30'> | [aryadharmadhikari](https://github.com/aryadharmadhikari) | 1 |
-| 2 | 🥇 | <img src='https://avatars.githubusercontent.com/u/67334984?v=4' alt='Avatar' width='30' height='30'> | [rahmlad-aramide](https://github.com/rahmlad-aramide) | 1 |
+| 2 | 🥇 | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi) | 1 |
 
 Thank you to all our fantastic contributors for their hard work and dedication!
 
