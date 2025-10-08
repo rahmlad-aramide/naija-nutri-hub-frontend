@@ -31,21 +31,32 @@ export const ForgotPasswordForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form method="POST" onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-white text-sm leading-none" style={{ fontFamily: "var(--font-manrope)" }}>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Enter Email" {...field} />
+                <div className="relative">
+                    <img
+                      src="/icons/mail-01.png"
+                      alt="mail"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 size-5"
+                    />
+                    <Input
+                      placeholder="Enter email"
+                      className="bg-[#222222] border border-[#444444] rounded-md pl-10 h-12 text-white"
+                      {...field}
+                    />
+                  </div>
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Continue</Button>
+        <Button type="submit" className="w-full py-3 h-12 bg-[#FF7A50] hover:bg-[#FF7A50]/90 text-white rounded-md text-sm leading-none focus:outline-none" style={{ fontFamily: "var(--font-source-serif-pro)" }}>Reset Password</Button>
       </form>
     </Form>
   );
