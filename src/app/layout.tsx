@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Serif_4, Manrope } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const sourceSerifPro = Source_Serif_4({
   variable: "--font-source-serif-pro",
