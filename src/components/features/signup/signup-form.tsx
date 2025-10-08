@@ -19,7 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 import { SignupFormSchema } from "@/lib/zod";
-import { EyeIcon, EyeOffIcon, MailIcon, UserIcon } from "lucide-react";
+import { EyeIcon, EyeOffIcon, MailIcon } from "lucide-react";
 
 export const SignupForm = () => {
   const router = useRouter();
@@ -57,18 +57,18 @@ export const SignupForm = () => {
             name="username"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-white text-sm">Username</FormLabel>
+                <FormLabel className="text-white text-sm leading-none" style={{ fontFamily: 'var(--font-manrope)' }}>Username</FormLabel>
                 <FormControl>
                   <div className="relative">
-                    <UserIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 size-5" />
-                    <Input
-                      placeholder="Enter username"
+                    <img src="/icons/user-icon.svg" alt="user" className="absolute left-3 top-1/2 -translate-y-1/2 size-5" />
+                    <Input 
+                      placeholder="Enter username" 
                       className="bg-[#222222] border border-[#444444] rounded-md pl-10 h-12 text-white"
                       {...field}
                     />
                   </div>
                 </FormControl>
-                <FormMessage className="text-red-500" />
+                <FormMessage className="text-[#FF7A50]" />
               </FormItem>
             )}
           />
@@ -77,7 +77,7 @@ export const SignupForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-white text-sm">Email</FormLabel>
+                <FormLabel className="text-white text-sm leading-none" style={{ fontFamily: 'var(--font-manrope)' }}>Email</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <MailIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 size-5" />
@@ -88,7 +88,7 @@ export const SignupForm = () => {
                     />
                   </div>
                 </FormControl>
-                <FormMessage className="text-red-500" />
+                <FormMessage className="text-[#FF7A50]" />
               </FormItem>
             )}
           />
@@ -98,9 +98,7 @@ export const SignupForm = () => {
             name="password"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel htmlFor="password" className="text-white text-sm">
-                  Password
-                </FormLabel>
+                <FormLabel htmlFor="password" className="text-white text-sm leading-none" style={{ fontFamily: 'var(--font-manrope)' }}>Password</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Input
@@ -156,15 +154,22 @@ export const SignupForm = () => {
                     </Button>
                   </div>
                 </FormControl>
+                <div className="flex items-center space-x-2 text-[#9E9E9E] text-sm">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM8 11.5C7.44772 11.5 7 11.0523 7 10.5C7 9.94772 7.44772 9.5 8 9.5C8.55228 9.5 9 9.94772 9 10.5C9 11.0523 8.55228 11.5 8 11.5ZM8 8.5C7.44772 8.5 7 8.05228 7 7.5V4.5C7 3.94772 7.44772 3.5 8 3.5C8.55228 3.5 9 3.94772 9 4.5V7.5C9 8.05228 8.55228 8.5 8 8.5Z" fill="#9CA3AF"/>
+                  </svg>
+                  <span style={{ fontFamily: 'var(--font-manrope)', fontSize: '12px' }} className="text-[#9E9E9E]">Must contain 1 uppercase letter, 1 number and a minimum of 8 characters</span>
+                </div>
                 <FormMessage className="text-red-500" />
               </FormItem>
             )}
           />
-          <Button
-            type="submit"
-            className="w-full bg-[#FF7A50] hover:bg-[#FF7A50]/90 text-white py-3 rounded-md h-12"
+          <Button 
+            type="submit" 
+            className="w-full bg-[#FF7A50] hover:bg-[#FF7A50]/90 text-white py-3 rounded-md h-12 font-semibold text-sm leading-none"
+            style={{ fontFamily: 'var(--font-source-serif-pro)' }}
           >
-            Sign Up
+            Create account
           </Button>
         </form>
       </Form>
