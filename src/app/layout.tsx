@@ -31,6 +31,7 @@ export default function RootLayout({
         className={`${sourceSerifPro.variable} ${manrope.variable} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
