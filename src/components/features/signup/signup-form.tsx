@@ -25,7 +25,6 @@ export const SignupForm = () => {
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
-  const [usernameError, setUsernameError] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
@@ -64,23 +63,11 @@ export const SignupForm = () => {
                     <img src="/icons/user-icon.svg" alt="user" className="absolute left-3 top-1/2 -translate-y-1/2 size-5" />
                     <Input 
                       placeholder="Enter username" 
-                      className={`bg-[#222222] border rounded-md pl-10 h-12 text-white ${usernameError ? 'border-red-500' : 'border-[#444444]'}`}
+                      className="bg-[#222222] border border-[#444444] rounded-md pl-10 h-12 text-white"
                       {...field}
-                      onChange={(e) => {
-                        field.onChange(e);
-                        setUsernameError(false);
-                      }}
                     />
                   </div>
                 </FormControl>
-                {usernameError && (
-                  <div className="flex items-center space-x-2 text-red-500 text-sm">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM8 11.5C7.44772 11.5 7 11.0523 7 10.5C7 9.94772 7.44772 9.5 8 9.5C8.55228 9.5 9 9.94772 9 10.5C9 11.0523 8.55228 11.5 8 11.5ZM8 8.5C7.44772 8.5 7 8.05228 7 7.5V4.5C7 3.94772 7.44772 3.5 8 3.5C8.55228 3.5 9 3.94772 9 4.5V7.5C9 8.05228 8.55228 8.5 8 8.5Z" fill="#FF7A50"/>
-                    </svg>
-                    <span style={{ fontFamily: 'var(--font-manrope)', fontSize: '12px' }} className="text-[#FF7A50]">Username taken</span>
-                  </div>
-                )}
                 <FormMessage className="text-[#FF7A50]" />
               </FormItem>
             )}
