@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: {}  # Add workflow dispatch for manual triggering
-  
+  workflow_dispatch: {} # Add workflow dispatch for manual triggering
+
 jobs:
   update-leaderboard-and-resize-images:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
       - name: Pass Environment Variables and Run Script
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }}
-          
+
         run: |
           # Pass the API_TOKEN secret as an environment variable to your script
           python update_leaderboard.py

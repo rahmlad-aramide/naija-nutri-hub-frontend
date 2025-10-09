@@ -9,7 +9,7 @@ export const maskEmail = (email: string = "") => {
   const [user, domain] = email.split("@");
   const maskedEmail = `***${user.slice(
     Math.max(0, user.length - 3),
-    user.length
+    user.length,
   )}@${domain}`;
 
   return maskedEmail;

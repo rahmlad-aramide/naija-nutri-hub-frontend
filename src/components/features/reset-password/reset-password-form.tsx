@@ -53,10 +53,7 @@ export const ResetPasswordForm = () => {
 
   return (
     <Form {...form}>
-      <form
-        method="POST"
-        onSubmit={form.handleSubmit(onSubmit)}
-      >
+      <form method="POST" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
           name="password"

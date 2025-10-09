@@ -1,0 +1,10 @@
+
+echo '🤔🤔🤔🤔... We need to build your code before we push... 🤔🤔🤔🤔'
+npm run build ||
+(
+    echo '❌👷🔨❌ Build failed... Is your development server still running? ❌👷🔨❌
+            Next build failed: View the errors above to see why. 
+    '
+    false;
+)
+
