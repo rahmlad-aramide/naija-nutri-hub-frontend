@@ -37,7 +37,7 @@ export default function ScanImagePage() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-[#1a1a1a] text-white p-6">
+    <main className="flex flex-col items-center justify-center min-h-screen text-white p-6">
       {/* Back Button */}
       <div className="absolute top-4 left-4">
         <Link
