@@ -2,6 +2,7 @@
 
 import { Image, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function ScanPage() {
   const foodSamples = ["Jellof rice", "Kebabs", "Egusi soup"];
@@ -17,23 +18,29 @@ export default function ScanPage() {
       </section>
 
       {/* Buttons */}
-      <div className="flex flex-col gap-4 mt-10 w-[50] max-w-xs text-[#FF7A50]">
+      <div className="flex flex-col gap-4 mt-10 w-full max-w-xs text-[#FF7A50]">
+      {/* Scan an image */}
+      <Link href="/scan-image">
         <Button
           variant="outline"
-          className="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center gap-2 px-5 py-7"
+          className="w-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center gap-2 px-5 py-7"
         >
           <Image size={18} />
           Scan an image
         </Button>
+      </Link>
 
+      {/* Add photos & files */}
+      <Link href="/upload-image">
         <Button
           variant="outline"
-          className="bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center gap-2 px-5 py-7"
+          className="w-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center gap-2 px-5 py-7"
         >
           <Upload size={18} />
           Add photos & files
         </Button>
-      </div>
+      </Link>
+    </div>
 
       {/* Food chips */}
       <div className="flex flex-wrap justify-center gap-3 mt-10">
