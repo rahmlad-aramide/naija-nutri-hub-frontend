@@ -36,16 +36,17 @@ Watch the recording of our info session on how to participate in this challenge 
 We maintain a leaderboard to track your contributions and their impact on our projects. The more you contribute, the higher you'll climb on the leaderboard.
 
 <!-- Section Start -->
-
 ### Top 10 Contributors
 
 Thank you to all our fantastic contributors for their hard work and dedication! Here are our top 10 contributors:
 
-| S/N | Rank |                                                                                                       | Contributor                                               | Merged PRs |
-| --- | ---- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ---------- |
-| 1   | 🥇   | <img src='https://avatars.githubusercontent.com/u/193773700?v=4' alt='Avatar' width='30' height='30'> | [aryadharmadhikari](https://github.com/aryadharmadhikari) | 3          |
-| 2   | 🥈   | <img src='https://avatars.githubusercontent.com/u/116392457?v=4' alt='Avatar' width='30' height='30'> | [alexgrate](https://github.com/alexgrate)                 | 2          |
-| 3   | 🥉   | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi)       | 1          |
+| S/N | Rank || Contributor | Merged PRs |
+|--| ---- | -- |----------- | ---------- |
+| 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/116392457?v=4' alt='Avatar' width='30' height='30'> | [alexgrate](https://github.com/alexgrate) | 3 |
+| 2 | 🥇 | <img src='https://avatars.githubusercontent.com/u/193773700?v=4' alt='Avatar' width='30' height='30'> | [aryadharmadhikari](https://github.com/aryadharmadhikari) | 3 |
+| 3 | 🥈 | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi) | 2 |
+| 4 | 🥈 | <img src='https://avatars.githubusercontent.com/u/131811805?v=4' alt='Avatar' width='30' height='30'> | [Seyi-Amusan](https://github.com/Seyi-Amusan) | 2 |
+| 5 | 🥉 | <img src='https://avatars.githubusercontent.com/u/73708569?v=4' alt='Avatar' width='30' height='30'> | [Jonniie](https://github.com/Jonniie) | 1 |
 
 Thank you to all our fantastic contributors for their hard work and dedication!
 
