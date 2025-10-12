@@ -74,7 +74,8 @@ export default function ScanImagePage() {
 
       {/* Footer */}
       <p className="text-center text-sm text-neutral-400 mt-10 max-w-xs">
-        Scan a photo or upload an image to identify your food and its nutritional information.
+        Scan a photo or upload an image to identify your food and its
+        nutritional information.
       </p>
     </main>
   );

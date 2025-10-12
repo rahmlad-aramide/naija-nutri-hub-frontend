@@ -157,19 +157,24 @@ export const ResetPasswordFormSchema = z
     path: ["confirmPassword"],
   });
 
-export const NewPasswordFormSchema = z.object({
-    newPassword: z.string().min(8, "Password must be at least 8 characters long."),
+export const NewPasswordFormSchema = z
+  .object({
+    newPassword: z
+      .string()
+      .min(8, "Password must be at least 8 characters long."),
     // You could add a .regex() here for more strength, e.g., require numbers/symbols
-    confirmPassword: z.string().min(8, "Password must be at least 8 characters long."),
-})
-    .refine((data) => data.newPassword === data.confirmPassword, {
-        message: "Passwords do not match",
-        path: ["confirmPassword"], // Show error on the confirm password field
-    });
+    confirmPassword: z
+      .string()
+      .min(8, "Password must be at least 8 characters long."),
+  })
+  .refine((data) => data.newPassword === data.confirmPassword, {
+    message: "Passwords do not match",
+    path: ["confirmPassword"], // Show error on the confirm password field
+  });
 
 export const ResetPasswordApiSchema = ResetPasswordFormSchema.transform(
   ({ token, password }) => ({
     token,
     password,
-  })
+  }),
 );

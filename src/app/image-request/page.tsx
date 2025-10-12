@@ -13,34 +13,35 @@ export default function ScanPage() {
       <section className="max-w-md text-center space-y-4">
         <h1 className="text-3xl font-semibold">What are you eating?</h1>
         <p className="text-neutral-400">
-          Scan a photo or upload an image to identify your food and its nutritional information
+          Scan a photo or upload an image to identify your food and its
+          nutritional information
         </p>
       </section>
 
       {/* Buttons */}
       <div className="flex flex-col gap-4 mt-10 w-full max-w-xs text-[#FF7A50]">
-      {/* Scan an image */}
-      <Link href="/scan-image">
-        <Button
-          variant="outline"
-          className="w-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center gap-2 px-5 py-7"
-        >
-          <Image size={18} />
-          Scan an image
-        </Button>
-      </Link>
+        {/* Scan an image */}
+        <Link href="/scan-image">
+          <Button
+            variant="outline"
+            className="w-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center gap-2 px-5 py-7"
+          >
+            <Image size={18} />
+            Scan an image
+          </Button>
+        </Link>
 
-      {/* Add photos & files */}
-      <Link href="/upload-image">
-        <Button
-          variant="outline"
-          className="w-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center gap-2 px-5 py-7"
-        >
-          <Upload size={18} />
-          Add photos & files
-        </Button>
-      </Link>
-    </div>
+        {/* Add photos & files */}
+        <Link href="/upload-image">
+          <Button
+            variant="outline"
+            className="w-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 flex items-center justify-center gap-2 px-5 py-7"
+          >
+            <Upload size={18} />
+            Add photos & files
+          </Button>
+        </Link>
+      </div>
 
       {/* Food chips */}
       <div className="flex flex-wrap justify-center gap-3 mt-10">
@@ -56,7 +57,8 @@ export default function ScanPage() {
 
       {/* Footer */}
       <p className="text-neutral-500 text-sm text-center max-w-sm mt-8">
-        Discover community made foods, recipes, nutrition and locations to get them
+        Discover community made foods, recipes, nutrition and locations to get
+        them
       </p>
     </main>
   );
