@@ -12,6 +12,7 @@ export default function SignupPage() {
         <SignupForm />
         <div className="mt-4 text-center">
           <p className="text-foreground text-sm leading-none" style={{ fontFamily: 'var(--font-manrope)' }}>
+
             Already have an account?{" "}
             <Link href="/login" className="font-bold hover:underline">
               Log In

@@ -191,6 +191,7 @@ export const SignupForm = () => {
             type="submit" 
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-md h-12 font-semibold text-sm leading-none"
             style={{ fontFamily: 'var(--font-source-serif-pro)' }}
+
           >
             Create account
           </Button>

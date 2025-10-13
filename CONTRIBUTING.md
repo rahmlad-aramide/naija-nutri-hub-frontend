@@ -4,15 +4,15 @@ Thanks for taking the time to contribute\! Your help is valuable and makes this 
 
 This document outlines the guidelines for contributing to **NAIJA-NUTRI-HUB-FRONTEND** (e.g., reporting a bug, submitting a feature request, or writing code).
 
------
+---
 
 ## Code of Conduct
 
 This project and its community are governed by the **NAIJA-NUTRI-HUB-FRONTEND Code of Conduct** (or a standard like the Contributor Covenant). By participating, you are expected to uphold this code. Please report unacceptable behavior to us.
 
-  * **[CODE\_OF\_CONDUCT](CODE\_OF\_CONDUCT.md)**
+- **[CODE_OF_CONDUCT](CODE_OF_CONDUCT.md)**
 
------
+---
 
 ## 💬 How to Ask Questions
 
@@ -21,7 +21,7 @@ If you have a question about how to use **NAIJA-NUTRI-HUB-FRONTEND** or want to 
 1.  **Start a discussion on our GitHub Discussions page**
 2.  **Ask in any of the [WHATSAPP_COMMUNITIES](WHATSAPP_COMMUNITIES.md)**
 
------
+---
 
 ## 🐛 Reporting Bugs
 
@@ -30,13 +30,13 @@ A great bug report helps us fix the issue faster. Please follow these steps:
 1.  **Check Existing Issues:** Search the **[GitHub Issues page](https://github.com/mlsanigeria/naija-nutri-hub-frontend/issues)** to see if the bug has already been reported.
 2.  **Open a New Issue:** If not, open a new issue and choose the **"Bug Report"** template.
 3.  **Be Detailed:**
-      * **What version of NAIJA-NUTRI-HUB-FRONTEND are you using?** (e.g., v1.2.3)
-      * **What operating system are you on?**
-      * **Expected behavior:** What did you expect to happen?
-      * **Actual behavior:** What actually happened (include error messages)?
-      * **Steps to Reproduce:** Provide a clear and concise set of instructions to reproduce the problem. Code snippets or screenshots are extremely helpful.
+    - **What version of NAIJA-NUTRI-HUB-FRONTEND are you using?** (e.g., v1.2.3)
+    - **What operating system are you on?**
+    - **Expected behavior:** What did you expect to happen?
+    - **Actual behavior:** What actually happened (include error messages)?
+    - **Steps to Reproduce:** Provide a clear and concise set of instructions to reproduce the problem. Code snippets or screenshots are extremely helpful.
 
------
+---
 
 ## ✨ Suggesting Features
 
@@ -44,11 +44,11 @@ We welcome ideas for new features\! To propose an enhancement:
 
 1.  **Check Existing Issues/Discussions:** See if the feature has already been proposed or discussed.
 2.  **Open a New Issue/Discussion:**
-      * For **small changes/improvements**, open a new issue and choose the **"Feature Request"** template.
-      * For **large, complex new features**, please **start a Discussion** first to get feedback from the community and maintainers.
+    - For **small changes/improvements**, open a new issue and choose the **"Feature Request"** template.
+    - For **large, complex new features**, please **start a Discussion** first to get feedback from the community and maintainers.
 3.  **Explain the "Why":** Clearly describe the feature, but more importantly, explain **why** it would be useful and what problem it solves.
 
------
+---
 
 ## 💻 Making Code Contributions (Pull Requests)
 
@@ -63,14 +63,14 @@ Ready to dive into the code? Awesome\! To ensure a smooth process, please follow
 
 ### 2\. Write Your Code
 
-  * Follow the existing **coding style** (e.g., using Prettier, ESLint, or existing conventions).
-  * **Keep changes focused.** If you are addressing a bug, don't include unrelated refactoring in the same pull request.
-  * **Add Tests:** If your changes introduce a new feature or fix a bug, please include appropriate tests.
+- Follow the existing **coding style** (e.g., using Prettier, ESLint, or existing conventions).
+- **Keep changes focused.** If you are addressing a bug, don't include unrelated refactoring in the same pull request.
+- **Add Tests:** If your changes introduce a new feature or fix a bug, please include appropriate tests.
 
 ### 3\. Commit and Push
 
-  * **Write clear commit messages.** We recommend using a conventional commit format (e.g., `fix: resolve issue with button padding`).
-  * **Push your branch** to your fork: `git push origin your-branch-name`
+- **Write clear commit messages.** We recommend using a conventional commit format (e.g., `fix: resolve issue with button padding`).
+- **Push your branch** to your fork: `git push origin your-branch-name`
 
 ### 4\. Create a Pull Request (PR)
 
@@ -81,16 +81,16 @@ Ready to dive into the code? Awesome\! To ensure a smooth process, please follow
 
 > **Note on Major Changes:** If your change is significant (e.g., changes an API or core behavior), please start a discussion or open an issue **before** spending a lot of time on it.
 
------
+---
 
 ## 📄 Documentation Contributions
 
 Documentation is just as important as the code\! Contributions to the documentation (typos, clarity improvements, new examples) are highly valued.
 
-  * Documentation files are located in **[e.g., the `/docs` folder or a separate repository]**.
-  * You can treat documentation changes like code contributions by following the steps in the section above.
+- Documentation files are located in **[e.g., the `/docs` folder or a separate repository]**.
+- You can treat documentation changes like code contributions by following the steps in the section above.
 
------
+---
 
 ## ⚖️ Licensing
 
