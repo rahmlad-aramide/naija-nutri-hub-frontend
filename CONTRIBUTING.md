@@ -116,6 +116,9 @@ Ready to dive into the code? Awesome\! To ensure a smooth process, please follow
 - `npm run build` - Build the application for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint for code quality checks
+- `npm run format` - Format code using Prettier
+- `npm run check-format` - Check if code is properly formatted
+- `npm run prepare` - Set up Husky git hooks
 
 ### 2\. Creating Your Branch
 
@@ -236,6 +239,182 @@ git checkout -b refactor/describe-the-refactor
 - **Don't include unrelated refactoring** in the same PR
 - **Keep PRs small** and reviewable (ideally under 400 lines of changes)
 
+### 6\. Git Hooks & Quality Assurance
+
+This project uses **Husky** to enforce code quality through git hooks. These hooks run automatically and **must pass** before you can commit or push your changes.
+
+#### Pre-commit Hook
+The pre-commit hook runs automatically when you try to commit and checks:
+
+1. **Code Formatting (Prettier)**
+   ```bash
+   npm run check-format
+   ```
+   - Ensures consistent code formatting across the project
+   - If formatting fails, you'll see: `🤢🤮🤢🤮 Its FORKING RAW - Your styling looks disgusting`
+   - **Fix**: Run `npm run format` to auto-format your code
+
+2. **Code Quality (ESLint)**
+   ```bash
+   npm run lint
+   ```
+   - Checks for code quality issues, unused variables, and best practices
+   - If linting fails, you'll see: `😤🏀👋😤 Get that weak shit out of here!`
+   - **Fix**: Address all ESLint errors and warnings before committing
+
+#### Pre-push Hook
+The pre-push hook runs automatically when you try to push and checks:
+
+1. **Build Success**
+   ```bash
+   npm run build
+   ```
+   - Ensures your code compiles successfully
+   - If build fails, you'll see: `❌👷🔨❌ Build failed... Is your development server still running?`
+   - **Fix**: Resolve all build errors before pushing
+
+#### Manual Quality Checks
+Before committing, always run these commands manually:
+
+```bash
+# 1. Format your code
+npm run format
+
+# 2. Check for linting issues
+npm run lint
+
+# 3. Ensure build passes
+npm run build
+
+# 4. Add formatted files to git
+git add .
+
+# 5. Commit your changes
+git commit -m "feat: your commit message"
+```
+
+#### Common Issues and Solutions
+
+**Formatting Issues:**
+```bash
+# Auto-fix formatting
+npm run format
+git add .
+git commit -m "style: format code"
+```
+
+**ESLint Warnings:**
+- **Unused variables**: Remove or use the variable
+- **Missing dependencies**: Add to useEffect dependency array
+- **Console.log statements**: Remove or replace with proper logging
+- **Any other warnings**: Address them before committing
+
+#### Minimizing ESLint Warnings
+**All ESLint warnings should be minimized** except when strictly necessary. Here's how to handle common warnings:
+
+**Unused Variables:**
+```tsx
+// ❌ Bad - Unused variable warning
+const [data, setData] = useState(null);
+const unusedVar = 'not used';
+
+// ✅ Good - Remove unused variables
+const [data, setData] = useState(null);
+// unusedVar removed
+
+// ✅ Good - Use underscore prefix for intentionally unused
+const [data, setData] = useState(null);
+const _unusedVar = 'intentionally unused';
+```
+
+**Missing Dependencies:**
+```tsx
+// ❌ Bad - Missing dependency warning
+useEffect(() => {
+  fetchData(userId);
+}, []); // userId missing from dependencies
+
+// ✅ Good - Include all dependencies
+useEffect(() => {
+  fetchData(userId);
+}, [userId]);
+```
+
+**Console Statements:**
+```tsx
+// ❌ Bad - Console.log in production code
+console.log('Debug info:', data);
+
+// ✅ Good - Remove or use proper logging
+// console.log removed
+
+// ✅ Good - Use proper error handling
+if (process.env.NODE_ENV === 'development') {
+  console.log('Debug info:', data);
+}
+```
+
+**Import/Export Issues:**
+```tsx
+// ❌ Bad - Unused import
+import { useState, useEffect } from 'react';
+// useEffect not used
+
+// ✅ Good - Remove unused imports
+import { useState } from 'react';
+```
+
+**TypeScript Warnings:**
+```tsx
+// ❌ Bad - Any type usage
+const data: any = fetchData();
+
+// ✅ Good - Proper typing
+interface DataType {
+  id: string;
+  name: string;
+}
+const data: DataType = fetchData();
+```
+
+**Build Failures:**
+- Check for TypeScript errors
+- Ensure all imports are correct
+- Verify component props and types
+- Check for missing dependencies
+
+### 7\. Component Development Guidelines
+
+#### Making Component Props Optional
+When updating existing components, **always make new props optional** to prevent breaking changes:
+
+```tsx
+// ❌ Bad - Breaking change
+interface ButtonProps {
+  variant: 'primary' | 'secondary';
+  size: 'sm' | 'md' | 'lg';
+  newProp: string; // This will break existing usage
+}
+
+// ✅ Good - Backward compatible
+interface ButtonProps {
+  variant: 'primary' | 'secondary';
+  size: 'sm' | 'md' | 'lg';
+  newProp?: string; // Optional prop with default value
+}
+
+export function Button({ variant, size, newProp = 'default' }: ButtonProps) {
+  // Component implementation
+}
+```
+
+#### Component Update Checklist
+- [ ] New props are optional with sensible defaults
+- [ ] Existing functionality remains unchanged
+- [ ] TypeScript types are properly defined
+- [ ] Component is tested with and without new props
+- [ ] Documentation is updated if needed
+
 ### 6\. Commit and Push
 
 #### Commit Message Guidelines
@@ -268,19 +447,77 @@ git push origin your-branch-name
 ### 7\. Create a Pull Request (PR)
 
 #### Before Creating a PR
-1. **Ensure your code is ready:**
-   - All tests pass
-   - ESLint passes without errors
-   - Code follows the style guide
-   - Changes are focused and complete
+Complete this comprehensive checklist before submitting your PR:
 
-2. **Update your branch** with the latest changes from main:
-   ```bash
-   git checkout main
-   git pull origin main
-   git checkout your-branch-name
-   git rebase main
-   ```
+##### Code Quality Checklist
+- [ ] **Code is formatted**: Run `npm run format` and commit changes
+- [ ] **No linting errors**: Run `npm run lint` and fix all errors
+- [ ] **Minimal warnings**: Address ESLint warnings (unused variables, etc.)
+- [ ] **Build successful**: Run `npm run build` and ensure no errors
+- [ ] **TypeScript errors resolved**: All type errors are fixed
+- [ ] **No console.log statements**: Remove or replace with proper logging
+- [ ] **Unused imports removed**: Clean up any unused imports
+- [ ] **Code follows style guide**: Follows project conventions
+
+##### Git & Branch Management
+- [ ] **Branch is up to date**: Rebased with latest main branch
+- [ ] **No merge conflicts**: Resolved all conflicts with main
+- [ ] **Clean commit history**: Meaningful commit messages
+- [ ] **Focused changes**: One feature/fix per PR
+- [ ] **Files are staged**: All changes are properly committed
+
+##### Testing & Validation
+- [ ] **Manual testing completed**: Tested all functionality
+- [ ] **Cross-browser testing**: Works in Chrome, Firefox, Safari
+- [ ] **Mobile responsive**: Tested on mobile devices
+- [ ] **Accessibility checked**: Proper ARIA labels and keyboard navigation
+- [ ] **Performance verified**: No significant performance regressions
+
+##### Documentation & Screenshots
+- [ ] **Screenshots included**: Figma design, local implementation, Husky checks
+- [ ] **PR description complete**: Clear description of changes
+- [ ] **Issue referenced**: Links to related issue
+- [ ] **Breaking changes documented**: If any breaking changes exist
+
+##### Final Commands to Run
+```bash
+# 1. Update with latest main
+git checkout main
+git pull origin main
+git checkout your-branch-name
+git rebase main
+
+# 2. Final quality checks
+npm run format
+npm run lint
+npm run build
+
+# 3. Stage and commit any formatting changes
+git add .
+git commit -m "style: format code before PR"
+
+# 4. Push your changes
+git push origin your-branch-name
+```
+
+##### Pre-PR Validation Script
+You can run this script to validate everything before creating a PR:
+
+```bash
+#!/bin/bash
+echo "🔍 Running pre-PR validation..."
+
+echo "📝 Formatting code..."
+npm run format
+
+echo "🔍 Checking linting..."
+npm run lint
+
+echo "🏗️ Building project..."
+npm run build
+
+echo "✅ All checks passed! Ready to create PR."
+```
 
 #### Creating the PR
 1. **Open a Pull Request** against the **`main`** branch
@@ -288,7 +525,7 @@ git push origin your-branch-name
    - **Description**: What changes were made and why
    - **Type of Change**: Bug fix, feature, documentation, etc.
    - **Testing**: How the changes were tested
-   - **Screenshots**: If applicable, include before/after screenshots
+   - **Screenshots**: Include required screenshots (see below)
    - **Checklist**: Confirm all requirements are met
 
 3. **Reference the Issue**: Link to the issue being addressed:
@@ -297,6 +534,112 @@ git push origin your-branch-name
    Closes #456
    Related to #789
    ```
+
+#### Required Screenshots
+For UI/UX changes, you **must** include these screenshots in your PR:
+
+1. **Figma Design Screenshot**
+   - Screenshot of the design from [Figma](https://www.figma.com/design/JD4yFts6kF1mLQzictb2F4/hactober-fest?node-id=0-1)
+   - Show the intended design and layout
+   - Include any design specifications or annotations
+   
+   **Example:**
+   ![Figma Design Example](/images/figma.png)
+   *Screenshot showing the Figma design for the component/page being implemented*
+
+2. **Local Development Screenshot**
+   - Screenshot of your implementation running locally
+   - Show the actual rendered component/page
+   - Include browser developer tools if relevant
+   
+   **Example:**
+   ![Local Development Example](/images/localhost.png)
+   *Screenshot showing the actual implementation running on localhost*
+
+3. **Husky Checks Passed Screenshot**
+   - Screenshot showing successful pre-commit and pre-push hooks
+   - Terminal output showing:
+     - ✅ Prettier formatting check passed
+     - ✅ ESLint check passed
+     - ✅ Build successful
+   - Example terminal output:
+     ```
+     🏗️👷  Have formatted the codebase? Checking styling, linting, and testing your project before committing.
+     ✅ Prettier check passed
+     ✅ ESLint check passed
+     🤔🤔🤔🤔... We need to build your code before we push... 🤔🤔🤔🤔
+     ✅ Build successful
+     ```
+   
+   **Example Terminal Output:**
+   ```
+   $ git commit -m "feat: add new login form component"
+   🏗️👷  Have formatted the codebase? Checking styling, linting, and testing your project before committing.
+   ✅ Prettier check passed
+   ✅ ESLint check passed
+   
+   $ git push origin feature/login-form
+   🤔🤔🤔🤔... We need to build your code before we push... 🤔🤔🤔🤔
+   ✅ Build successful
+   ```
+
+#### Screenshot Guidelines
+- **High quality**: Use clear, high-resolution screenshots
+- **Full page**: Show the complete component/page, not just a portion
+- **Consistent browser**: Use the same browser for all screenshots
+- **Mobile responsive**: Include mobile view if applicable
+- **Before/After**: For bug fixes, show both the broken and fixed states
+
+#### How to Take Screenshots
+
+**1. Figma Design Screenshot:**
+- Open the [Figma design](https://www.figma.com/design/JD4yFts6kF1mLQzictb2F4/hactober-fest?node-id=0-1)
+- Navigate to the specific component/page you're implementing
+- Take a full-page screenshot or crop to show the relevant design
+- Save as `figma-design.png` or similar descriptive name
+
+**Example:**
+![Figma Design Example](/images/figma.png)
+*Screenshot showing the Figma design for the component/page being implemented*
+
+**2. Local Development Screenshot:**
+- Run your local development server: `npm run dev`
+- Navigate to the page/component you've implemented
+- Take a screenshot of the rendered page
+- Save as `localhost-implementation.png` or similar descriptive name
+
+**Example:**
+![Local Development Example](/images/localhost.png)
+*Screenshot showing the actual implementation running on localhost*
+
+**3. Husky Checks Screenshot:**
+- Open your terminal/command prompt
+- Run the commit and push commands
+- Take a screenshot of the terminal showing successful checks
+- Save as `husky-checks-passed.png` or similar descriptive name
+
+**Example:**
+![Husky Checks Example](/images/husky-check.png)
+*Screenshot showing the actual husky check implementation*
+
+
+## Screenshots
+- **Figma Design**: Shows the intended design and layout
+- **Local Implementation**: Shows the actual rendered component
+- **Husky Checks**: Confirms all quality checks passed
+
+## Changes Made
+- Added new login form component
+- Implemented form validation with Zod
+- Added proper TypeScript types
+- Ensured responsive design
+
+## Testing
+- [x] Component renders correctly
+- [x] Form validation works
+- [x] Responsive on mobile devices
+- [x] All Husky checks pass
+```
 
 #### PR Review Process
 1. **Automated Checks**: CI/CD pipeline will run tests and linting
