@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -74,8 +74,6 @@ export default function Home() {
             <img src="/icons/mail-open-love.svg" alt="Mail-Open-Love" />
           </footer>
       </div>
-
-      
     </div>
   );
 }

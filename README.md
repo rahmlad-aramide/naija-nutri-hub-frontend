@@ -9,10 +9,12 @@ This year the Hacktoberfest ML/AI Open-Source Challenge focuses on **one flagshi
 **Naija Nutri Hub** is an end-to-end, AI-powered food platform focused on **Nigerian food**. The goal is a practical, production-ready tool that combines computer vision, nutrition knowledge, recipe generation, and local discovery into a single experience. Participants can contribute across [ML/AI engineering](https://github.com/mlsanigeria/naija-nutri-hub), [frontend (with Next.js)](https://github.com/mlsanigeria/naija-nutri-hub-frontend), [backend](https://github.com/mlsanigeria/naija-nutri-hub), [UI/UX design](https://github.com/mlsanigeria/naija-nutri-hub-frontend), DevOps, and non-technical roles (docs, community, testing).
 
 ### Project overview
+
 Naija Nutri Hub allows a user to take or upload a photo of a meal and receive:
-- **Food classification** — Identify the dish (single or multiple items in an image).  
-- **Nutritional & calorie estimates** — Grounded nutrition facts pulled or reconciled from external APIs/databases.  
-- **Recipe suggestions** — Step-by-step cooking recipes (and ingredient/portion guidance) generated or retrieved for the identified dish.  
+
+- **Food classification** — Identify the dish (single or multiple items in an image).
+- **Nutritional & calorie estimates** — Grounded nutrition facts pulled or reconciled from external APIs/databases.
+- **Recipe suggestions** — Step-by-step cooking recipes (and ingredient/portion guidance) generated or retrieved for the identified dish.
 - **Nearby restaurants** — Recommend local restaurants that sell the same or similar dishes.
 
 ## **How to Participate**
@@ -26,6 +28,7 @@ Naija Nutri Hub allows a user to take or upload a photo of a meal and receive:
 4. **Submit a Pull Request**: Share your contributions by submitting pull requests. Please follow our contribution guidelines outlined in the project's README.
 
 ### **Still Confused About How to Get Started? 🤔**
+
 Watch the recording of our info session on how to participate in this challenge on [YouTube](https://youtu.be/pC_5E3AcrZc).
 
 ## **🏆 Leaderboard**
@@ -41,7 +44,9 @@ Thank you to all our fantastic contributors for their hard work and dedication! 
 |--| ---- | -- |----------- | ---------- |
 | 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/116392457?v=4' alt='Avatar' width='30' height='30'> | [alexgrate](https://github.com/alexgrate) | 3 |
 | 2 | 🥇 | <img src='https://avatars.githubusercontent.com/u/193773700?v=4' alt='Avatar' width='30' height='30'> | [aryadharmadhikari](https://github.com/aryadharmadhikari) | 3 |
-| 3 | 🥈 | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi) | 2 |
+| 3 | 🥇 | <img src='https://avatars.githubusercontent.com/u/131811805?v=4' alt='Avatar' width='30' height='30'> | [Seyi-Amusan](https://github.com/Seyi-Amusan) | 3 |
+| 4 | 🥈 | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi) | 2 |
+| 5 | 🥉 | <img src='https://avatars.githubusercontent.com/u/73708569?v=4' alt='Avatar' width='30' height='30'> | [Jonniie](https://github.com/Jonniie) | 1 |
 
 Thank you to all our fantastic contributors for their hard work and dedication!
 
