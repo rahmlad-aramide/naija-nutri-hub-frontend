@@ -544,7 +544,7 @@ For UI/UX changes, you **must** include these screenshots in your PR:
    - Include any design specifications or annotations
    
    **Example:**
-   ![Figma Design Example](/images/figma.png)
+   ![Figma Design Example](./public/images/figma.png)
    *Screenshot showing the Figma design for the component/page being implemented*
 
 2. **Local Development Screenshot**
@@ -553,7 +553,7 @@ For UI/UX changes, you **must** include these screenshots in your PR:
    - Include browser developer tools if relevant
    
    **Example:**
-   ![Local Development Example](/images/localhost.png)
+   ![Local Development Example](./public/images/localhost.png)
    *Screenshot showing the actual implementation running on localhost*
 
 3. **Husky Checks Passed Screenshot**
@@ -599,7 +599,7 @@ For UI/UX changes, you **must** include these screenshots in your PR:
 - Save as `figma-design.png` or similar descriptive name
 
 **Example:**
-![Figma Design Example](/images/figma.png)
+![Figma Design Example](./public/images/figma.png)
 *Screenshot showing the Figma design for the component/page being implemented*
 
 **2. Local Development Screenshot:**
@@ -609,7 +609,7 @@ For UI/UX changes, you **must** include these screenshots in your PR:
 - Save as `localhost-implementation.png` or similar descriptive name
 
 **Example:**
-![Local Development Example](/images/localhost.png)
+![Local Development Example](./public/images/localhost.png)
 *Screenshot showing the actual implementation running on localhost*
 
 **3. Husky Checks Screenshot:**
@@ -619,7 +619,7 @@ For UI/UX changes, you **must** include these screenshots in your PR:
 - Save as `husky-checks-passed.png` or similar descriptive name
 
 **Example:**
-![Husky Checks Example](/images/husky-check.png)
+![Husky Checks Example](./public/images/husky-check.png)
 *Screenshot showing the actual husky check implementation*
 
 
