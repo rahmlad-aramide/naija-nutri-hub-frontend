@@ -49,6 +49,8 @@ export default function page() {
                         src="/images/bgimage.png" 
                         alt="Matcha Pancake"
                         fill
+                        priority
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover"
                     />
                 </div>
@@ -66,28 +68,28 @@ export default function page() {
                         <div className="grid grid-cols-2  gap-4 text-sm mb-4" style={{ fontFamily: "var(--font-manrope)" }}>
                             <div className="flex items-center space-x-2">
                                 <div className="bg-[#FFEDE7] w-10 h-10 rounded-md flex items-center justify-center">
-                                    <Image src="/icons/calorie-icon.png" alt="Calories" width={16.84} height={20.96} />
+                                    <Image src="/icons/calorie-icon.png" alt="Calories" width={16.84} height={20.96} sizes="50px" />
                                 </div>
                                 <span className="text-base" >120 Calories</span>
                             </div>
 
                             <div className="flex items-center space-x-2">
                                 <div className="bg-[#FFEDE7] w-10 h-10 rounded-md flex items-center justify-center">
-                                    <Image src="/icons/fats-icon.png" alt="Fats" width={16.84} height={20.96} />
+                                    <Image src="/icons/fats-icon.png" alt="Fats" width={16.84} height={20.96} sizes="50px" />
                                 </div>
                                 <span className="text-base" >91g Fats</span>
                             </div>
 
                             <div className="flex items-center space-x-2">
                                 <div className="bg-[#FFEDE7] w-10 h-10 rounded-md flex items-center justify-center">
-                                    <Image src="/icons/carbs-icon.png" alt="Carbs" width={16.84} height={20.96} />
+                                    <Image src="/icons/carbs-icon.png" alt="Carbs" width={16.84} height={20.96} sizes="50px" />
                                 </div>
                                 <span className="text-base" >65g Carbs</span>
                             </div>
 
                             <div className="flex items-center space-x-2">
                                 <div className="bg-[#FFEDE7] w-10 h-10 rounded-md flex items-center justify-center">
-                                    <Image src="/icons/protein-icon.png" alt="Calories" width={16.84} height={20.96} />
+                                    <Image src="/icons/protein-icon.png" alt="Calories" width={16.84} height={20.96} sizes="50px" />
                                 </div>
                                 <span className="text-base" >27g Proteins</span>
                             </div>
