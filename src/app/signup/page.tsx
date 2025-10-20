@@ -2,8 +2,11 @@
 
 import axios from "axios";
 import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function SignupForm() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [form, setForm] = useState({
     firstname: "",
     lastname: "",
@@ -13,19 +16,41 @@ export default function SignupForm() {
   });
   const [message, setMessage] = useState("");
 
+  const storedEmail =
+    typeof window !== "undefined" ? localStorage.getItem("pendingEmail") : null;
+  const email = searchParams.get("email") || storedEmail || "";
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setMessage("Creating account...");
 
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/sign-up`, form);
+      const response = await fetch(
+        "https://naija-nutri-hub.azurewebsites.net/sign-up",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        },
+      );
 
-      setMessage("Sign-up successful! Check your email for OTP.");
-    } catch (error: unknown) {
-      setMessage("Sign-up failed. Please try again.");
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage("Sign up successful! Redirecting...");
+        localStorage.setItem("pendingEmail", form.email);
+
+        router.push(`/verify-account?email=${encodeURIComponent(form.email)}`);
+      } else {
+        setMessage(`Sign up failed: ${data.message || "Try again."}`);
+      }
+    } catch (error) {
+      console.error(error);
+      setMessage("Network error. Please try again.");
     }
   };
 
