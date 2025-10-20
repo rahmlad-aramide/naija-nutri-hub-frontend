@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 import { AlertCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -44,6 +45,8 @@ const CustomMailIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export const VerifyAccountForm = () => {
+  const router = useRouter();
+
   const [isOtpIncorrect, setIsOtpIncorrect] = useState(false);
 
   const searchParams = useSearchParams();
@@ -70,9 +73,6 @@ export const VerifyAccountForm = () => {
       form.reset({ code: "" });
       return;
     }
-
-    setIsOtpIncorrect(false);
-    toast.success("Account verified successfully!");
   }
 
   return (
