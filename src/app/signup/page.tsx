@@ -1,10 +1,9 @@
 "use client";
 
-import axios from "axios";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function SignupForm() {
+function SignupFormContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [form, setForm] = useState({
@@ -15,10 +14,6 @@ export default function SignupForm() {
     password: "",
   });
   const [message, setMessage] = useState("");
-
-  const storedEmail =
-    typeof window !== "undefined" ? localStorage.getItem("pendingEmail") : null;
-  const email = searchParams.get("email") || storedEmail || "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -114,5 +109,13 @@ export default function SignupForm() {
         )}
       </form>
     </div>
+  );
+}
+
+export default function SignupForm() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignupFormContent />
+    </Suspense>
   );
 }
