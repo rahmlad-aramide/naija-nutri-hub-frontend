@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -21,17 +22,13 @@ import { LoginFormSchema } from "@/lib/zod";
 import { EyeIcon, EyeOffIcon, MailIcon } from "lucide-react";
 import Link from "next/link";
 
-export const LoginForm = () => {
+export function LoginForm() {
+  const router = useRouter();
+
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevState) => !prevState);
-  };
-
-  const toggleRememberMe = () => {
-    setRememberMe((prevState) => !prevState);
-  };
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const form = useForm<z.infer<typeof LoginFormSchema>>({
     resolver: zodResolver(LoginFormSchema),
@@ -41,9 +38,44 @@ export const LoginForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof LoginFormSchema>) {
-    console.log(values);
-  }
+  // 🧠 Toggle handlers
+  const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
+  const toggleRememberMe = () => setRememberMe((prev) => !prev);
+
+  // ✅ Correctly handle submission
+  const onSubmit = async (values: z.infer<typeof LoginFormSchema>) => {
+    setErrorMessage("");
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          username: values.email, // or values.username if your form uses that name
+          password: values.password,
+        }),
+      });
+
+      if (response.ok) {
+        router.push("/image-request");
+        return;
+      } else {
+        const error = await response.json();
+        console.error("Login error:", error);
+        setErrorMessage(
+          error?.detail || "Invalid credentials or unverified account.",
+        );
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      setErrorMessage("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="w-full">
@@ -192,4 +224,4 @@ export const LoginForm = () => {
       </Form>
     </div>
   );
-};
+}

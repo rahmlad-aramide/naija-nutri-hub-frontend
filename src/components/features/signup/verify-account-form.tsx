@@ -48,12 +48,17 @@ export const VerifyAccountForm = () => {
 
   const [isOtpIncorrect, setIsOtpIncorrect] = useState(false);
 
+  const [resendStatus, setResendStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const searchParams = useSearchParams();
   const email = searchParams.get("email") || "";
 
-  const username = email.split("@")[0];
+  const [username, domain] = email.split("@");
   const lastThreeChars = username.length > 3 ? username.slice(-3) : username;
-  const maskedEmail = `*****${lastThreeChars}@gmail.com`;
+  const maskedEmail = `*****${lastThreeChars}@${domain}`;
 
   const form = useForm<z.infer<typeof VerifyAccountFormSchema>>({
     resolver: zodResolver(VerifyAccountFormSchema),
@@ -61,6 +66,32 @@ export const VerifyAccountForm = () => {
       code: "",
     },
   });
+
+  const handleResendOtp = async () => {
+    try {
+      setResendStatus("loading");
+      setErrorMessage("");
+
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/resend_otp?email=${encodeURIComponent(email)}`,
+        { method: "POST" },
+      );
+
+      if (response.ok) {
+        setResendStatus("success");
+      } else {
+        const data = await response.json();
+        setErrorMessage(data?.detail?.[0]?.msg || "Failed to resend OTP");
+        setResendStatus("error");
+      }
+    } catch (error) {
+      setErrorMessage("Network error. Please try again.");
+      setResendStatus("error");
+    } finally {
+      // Optionally reset after some time (cooldown)
+      setTimeout(() => setResendStatus("idle"), 5000);
+    }
+  };
 
   async function onSubmit(data: z.infer<typeof VerifyAccountFormSchema>) {
     try {
@@ -169,8 +200,22 @@ export const VerifyAccountForm = () => {
               <AlertCircle className="h-4 w-4" />
               <p>Security code doesn&apos;t match</p>
             </div>
+          ) : resendStatus === "success" ? (
+            <p className="text-sm text-green-600">
+              New OTP sent successfully 🎉
+            </p>
+          ) : resendStatus === "error" ? (
+            <p className="text-sm text-destructive">{errorMessage}</p>
           ) : (
-            <p className="text-sm">Resend code by Email</p>
+            <button
+              onClick={handleResendOtp}
+              disabled={resendStatus === "loading"}
+              className="text-sm text-primary hover:underline disabled:opacity-50"
+            >
+              {resendStatus === "loading"
+                ? "Sending..."
+                : "Resend code by Email"}
+            </button>
           )}
 
           <Button type="submit" className="w-full h-11 text-base">
