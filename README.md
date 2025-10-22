@@ -84,10 +84,11 @@ Watch our info session on how to get started with Hacktoberfest and contribute t
 🎥 [YouTube](https://youtu.be/pC_5E3AcrZc)
 
 
-## 🏆 **Leaderboard**
+## **🏆 Leaderboard**
 
-We maintain a leaderboard to celebrate top contributors!  
-Your merged PRs count toward your Hacktoberfest and leaderboard ranking.
+We maintain a leaderboard to track your contributions and their impact on our projects. The more you contribute, the higher you'll climb on the leaderboard.
+
+<!-- Section Start -->
 
 | S/N | Rank || Contributor | Merged PRs |
 |--| ---- | -- |----------- | ---------- |
@@ -96,6 +97,8 @@ Your merged PRs count toward your Hacktoberfest and leaderboard ranking.
 | 3 | 🥉 | <img src='https://avatars.githubusercontent.com/u/193773700?v=4' alt='Avatar' width='30' height='30'> | [aryadharmadhikari](https://github.com/aryadharmadhikari) | 3 |
 | 4 | 🥉 | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi) | 3 |
 | 5 | 4 | <img src='https://avatars.githubusercontent.com/u/73708569?v=4' alt='Avatar' width='30' height='30'> | [Jonniie](https://github.com/Jonniie) | 1 |
+
+<!-- Section End -->
 
 > 🎉 Thank you to all contributors for making Hacktoberfest Open Source Challenge 3.0 a success!  
 > Check out the full [leaderboard here](LEADERBOARD.md).
