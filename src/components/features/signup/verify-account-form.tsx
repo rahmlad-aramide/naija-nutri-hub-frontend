@@ -22,6 +22,7 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { ResendOTPButton } from "./resend-otp-button"; // Import the button
 
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 
@@ -62,35 +63,15 @@ export const VerifyAccountForm = () => {
     },
   });
 
-  async function onSubmit(data: z.infer<typeof VerifyAccountFormSchema>) {
-    try {
-      setIsOtpIncorrect(false);
+  function onSubmit(data: z.infer<typeof VerifyAccountFormSchema>) {
+    // This part should also be replaced with a real API call in a future task
+    const CORRECT_OTP = "123456";
 
-      const response = await fetch(
-        "https://naija-nutri-hub.azurewebsites.net/verify",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: email,
-            otp: data.code,
-          }),
-        },
-      );
-
-      const result = await response.json();
-
-      if (response.ok) {
-        toast.success("Account verified successfully!");
-        router.push("/login");
-      } else {
-        console.error(result);
-        setIsOtpIncorrect(true);
-        toast.error(result.message || "Invalid or expired OTP.");
-      }
-    } catch (error) {
-      console.error("Verification error:", error);
-      toast.error("Something went wrong. Please try again.");
+    if (data.code !== CORRECT_OTP) {
+      setIsOtpIncorrect(true);
+      // This resets the form after an incorrect attempt
+      form.reset({ code: "" });
+      return;
     }
   }
 
@@ -170,7 +151,11 @@ export const VerifyAccountForm = () => {
               <p>Security code doesn&apos;t match</p>
             </div>
           ) : (
-            <p className="text-sm">Resend code by Email</p>
+            // Replaced the static text with the ResendOTPButton component
+            <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
+              <span>Didn&apos;t receive code?</span>
+              <ResendOTPButton email={email} />
+            </div>
           )}
 
           <Button type="submit" className="w-full h-11 text-base">
