@@ -98,10 +98,11 @@ We maintain a leaderboard to track your contributions and their impact on our pr
 | 4 | 🥉 | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi) | 3 |
 | 5 | 4 | <img src='https://avatars.githubusercontent.com/u/73708569?v=4' alt='Avatar' width='30' height='30'> | [Jonniie](https://github.com/Jonniie) | 1 |
 
+Thank you to all our fantastic contributors for their hard work and dedication!
+
 <!-- Section End -->
 
-> 🎉 Thank you to all contributors for making Hacktoberfest Open Source Challenge 3.0 a success!  
-> Check out the full [leaderboard here](LEADERBOARD.md).
+Check out the full leaderboard [here](LEADERBOARD.md).
 
 ---
 
