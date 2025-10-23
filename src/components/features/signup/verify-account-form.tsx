@@ -57,9 +57,9 @@ export const VerifyAccountForm = () => {
   const searchParams = useSearchParams();
   const email = searchParams.get("email") || "";
 
-  const username = email.split("@")[0];
+  const [username, domain] = email.split("@");
   const lastThreeChars = username.length > 3 ? username.slice(-3) : username;
-  const maskedEmail = `*****${lastThreeChars}@gmail.com`;
+  const maskedEmail = `*****${lastThreeChars}@${domain}`;
 
   const form = useForm<z.infer<typeof VerifyAccountFormSchema>>({
     resolver: zodResolver(VerifyAccountFormSchema),
