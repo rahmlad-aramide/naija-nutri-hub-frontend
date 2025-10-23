@@ -95,7 +95,7 @@ Thank you to all our fantastic contributors for their hard work and dedication! 
 
 | S/N | Rank || Contributor | Merged PRs |
 |--| ---- | -- |----------- | ---------- |
-| 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/131811805?v=4' alt='Avatar' width='30' height='30'> | [Seyi-Amusan](https://github.com/Seyi-Amusan) | 8 |
+| 1 | 🥇 | <img src='https://avatars.githubusercontent.com/u/131811805?v=4' alt='Avatar' width='30' height='30'> | [Seyi-Amusan](https://github.com/Seyi-Amusan) | 9 |
 | 2 | 🥈 | <img src='https://avatars.githubusercontent.com/u/116392457?v=4' alt='Avatar' width='30' height='30'> | [alexgrate](https://github.com/alexgrate) | 6 |
 | 3 | 🥉 | <img src='https://avatars.githubusercontent.com/u/193773700?v=4' alt='Avatar' width='30' height='30'> | [aryadharmadhikari](https://github.com/aryadharmadhikari) | 3 |
 | 4 | 🥉 | <img src='https://avatars.githubusercontent.com/u/101010436?v=4' alt='Avatar' width='30' height='30'> | [MichaelOmoniyi](https://github.com/MichaelOmoniyi) | 3 |
