@@ -49,6 +49,11 @@ export const VerifyAccountForm = () => {
 
   const [isOtpIncorrect, setIsOtpIncorrect] = useState(false);
 
+  const [resendStatus, setResendStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const searchParams = useSearchParams();
   const email = searchParams.get("email") || "";
 
@@ -63,15 +68,61 @@ export const VerifyAccountForm = () => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof VerifyAccountFormSchema>) {
-    // This part should also be replaced with a real API call in a future task
-    const CORRECT_OTP = "123456";
+  const handleResendOtp = async () => {
+    try {
+      setResendStatus("loading");
+      setErrorMessage("");
 
-    if (data.code !== CORRECT_OTP) {
-      setIsOtpIncorrect(true);
-      // This resets the form after an incorrect attempt
-      form.reset({ code: "" });
-      return;
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/resend_otp?email=${encodeURIComponent(email)}`,
+        { method: "POST" },
+      );
+
+      if (response.ok) {
+        setResendStatus("success");
+      } else {
+        const data = await response.json();
+        setErrorMessage(data?.detail?.[0]?.msg || "Failed to resend OTP");
+        setResendStatus("error");
+      }
+    } catch (error) {
+      setErrorMessage("Network error. Please try again.");
+      setResendStatus("error");
+    } finally {
+      // Optionally reset after some time (cooldown)
+      setTimeout(() => setResendStatus("idle"), 5000);
+    }
+  };
+
+  async function onSubmit(data: z.infer<typeof VerifyAccountFormSchema>) {
+    try {
+      setIsOtpIncorrect(false);
+
+      const response = await fetch(
+        "https://naija-nutri-hub.azurewebsites.net/verify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: email,
+            otp: data.code,
+          }),
+        },
+      );
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Account verified successfully!");
+        router.push("/login");
+      } else {
+        console.error(result);
+        setIsOtpIncorrect(true);
+        toast.error(result.message || "Invalid or expired OTP.");
+      }
+    } catch (error) {
+      console.error("Verification error:", error);
+      toast.error("Something went wrong. Please try again.");
     }
   }
 
@@ -150,12 +201,22 @@ export const VerifyAccountForm = () => {
               <AlertCircle className="h-4 w-4" />
               <p>Security code doesn&apos;t match</p>
             </div>
+          ) : resendStatus === "success" ? (
+            <p className="text-sm text-green-600">
+              New OTP sent successfully 🎉
+            </p>
+          ) : resendStatus === "error" ? (
+            <p className="text-sm text-destructive">{errorMessage}</p>
           ) : (
-            // Replaced the static text with the ResendOTPButton component
-            <div className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-              <span>Didn&apos;t receive code?</span>
-              <ResendOTPButton email={email} />
-            </div>
+            <button
+              onClick={handleResendOtp}
+              disabled={resendStatus === "loading"}
+              className="text-sm text-primary hover:underline disabled:opacity-50"
+            >
+              {resendStatus === "loading"
+                ? "Sending..."
+                : "Resend code by Email"}
+            </button>
           )}
 
           <Button type="submit" className="w-full h-11 text-base">
