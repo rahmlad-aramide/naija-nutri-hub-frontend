@@ -22,6 +22,7 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { ResendOTPButton } from "./resend-otp-button"; // Import the button
 
 import { REGEXP_ONLY_DIGITS } from "input-otp";
 
