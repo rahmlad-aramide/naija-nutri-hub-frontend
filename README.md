@@ -55,7 +55,7 @@ Naija Nutri Hub enables users to take or upload a photo of a meal and receive:
 |-------------|-------------|
 | [naija-nutri-hub](https://github.com/mlsanigeria/naija-nutri-hub) | Core **backend + ML/AI** services |
 | [naija-nutri-hub-frontend](https://github.com/mlsanigeria/naija-nutri-hub-frontend) | **Next.js web app** (frontend) |
-| [naija-nutri-hub-datasets](#) | (Optional) **dataset + annotations** for training ML models |
+| [naija-nutri-hub-datasets](https://github.com/mlsanigeria/naija-nutri-hub/blob/main/CONTRIBUTING.md#-datasetsapis) | **Datasets + APIs** for training ML models/grounding LLMs |
 
 ---
 
